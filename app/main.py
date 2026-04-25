@@ -19,24 +19,19 @@ def get_human_age(cat_age: int, dog_age: int) -> list:
         get_human_age(24, 24) == [2, 2]
     """
     # TODO: Implement this function
-    def convert_cat_year(age: int) -> int:
+
+    def cat_to_human(age: int) -> int:
         if age < 15:
             return 0
-        elif age < 24:
+        if age < 24:
             return 1
-        elif age < 28:
-            return 2
-        else:
-            return 2 + (age - 24) // 4
+        return 2 + (age - 24) // 4
 
-    def convert_dog_year(age: int) -> int:
+    def dog_to_human(age: int) -> int:
         if age < 15:
             return 0
-        elif age < 24:
+        if age < 24:
             return 1
-        elif age < 28:
-            return 2
-        else:
-            return 2 + (age - 24) // 5
+        return 2 + (age - 24) // 5
 
-    return [convert_cat_year(cat_age), convert_dog_year(dog_age)]
+    return [cat_to_human(cat_age), dog_to_human(dog_age)]
