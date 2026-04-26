@@ -1,8 +1,4 @@
 import pytest
-from app.main import get_human_age
-
-
-import pytest
 
 from app.main import get_human_age
 
@@ -20,5 +16,5 @@ from app.main import get_human_age
         (100, 100, [21, 17]),  # велике значення
     ],
 )
-def test_get_human_age(cat_age, dog_age, expected):
+def test_get_human_age(cat_age: int, dog_age: int, expected: list) -> bool:
     assert get_human_age(cat_age, dog_age) == expected
